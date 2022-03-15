@@ -60,4 +60,12 @@ dependencies {
     //Dagger2
     implementation(Dependencies.Dagger.core)
     kapt(Dependencies.Dagger.compiler)
+
+    //Retrofit
+    implementation(Dependencies.Retrofit.core)
+    implementation(Dependencies.Retrofit.converterMoshi)
+
+    //Coroutine
+    implementation(Dependencies.Coroutine.coroutinesCore)
+    implementation(Dependencies.Coroutine.coroutinesAndroid)
 }
