@@ -4,8 +4,8 @@ package kz.tolegen.kinolar
 import android.content.Intent
 import com.github.terrakok.cicerone.androidx.ActivityScreen
 import com.github.terrakok.cicerone.androidx.FragmentScreen
-import kz.tolegen.kinolar.ui.movielist.MovieListView
-import kz.tolegen.kinolar.ui.root.RootView
+import kz.tolegen.kinolar.app.movielist.MovieListView
+import kz.tolegen.kinolar.app.root.RootView
 
 object Screens {
 

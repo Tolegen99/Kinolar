@@ -1,4 +1,4 @@
-package kz.tolegen.kinolar.ui.root
+package kz.tolegen.kinolar.app.root
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

@@ -1,4 +1,4 @@
-package kz.tolegen.kinolar.ui.movielist.viewmodel
+package kz.tolegen.kinolar.app.movielist.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Tolegen Omirbekov/AndroidStudioProjects/Kinolar/app/src/main/res/layout/view_movie_list.xml" value="0.1" />
+        <entry key="..\:/Users/Tolegen Omirbekov/AndroidStudioProjects/Kinolar/app/src/main/res/layout/item_movie.xml" value="0.259375" />
+        <entry key="..\:/Users/Tolegen Omirbekov/AndroidStudioProjects/Kinolar/app/src/main/res/layout/view_movie_list.xml" value="0.176" />
         <entry key="..\:/Users/Tolegen Omirbekov/AndroidStudioProjects/Kinolar/app/src/main/res/layout/view_root.xml" value="0.15092592592592594" />
       </map>
     </option>

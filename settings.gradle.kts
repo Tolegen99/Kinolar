@@ -7,5 +7,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Kinolar"
-include (":app")
-include (":core")
+include (":app", ":core")
