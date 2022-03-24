@@ -1,4 +1,4 @@
-package kz.tolegen.kinolar.ui.movielist
+package kz.tolegen.kinolar.app.movielist
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import kz.tolegen.kinolar.R
+import kz.tolegen.kinolar.app.movielist.viewmodel.MovieListViewModel
 import kz.tolegen.kinolar.base.BaseFragment
 import kz.tolegen.kinolar.databinding.ViewMovieListBinding
-import kz.tolegen.kinolar.ui.movielist.viewmodel.MovieListViewModel
 
 class MovieListView : BaseFragment<ViewMovieListBinding>(R.layout.view_movie_list) {
 
@@ -30,4 +30,9 @@ class MovieListView : BaseFragment<ViewMovieListBinding>(R.layout.view_movie_lis
         return binding {
         }.root
     }
+
+    override fun provideViewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): ViewMovieListBinding = ViewMovieListBinding.inflate(inflater, container, false)
 }
