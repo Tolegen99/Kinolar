@@ -7,11 +7,11 @@ import com.github.terrakok.cicerone.Navigator
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.Replace
 import com.github.terrakok.cicerone.androidx.AppNavigator
-import kz.tolegen.common.interfaces.BackButtonListener
 import kz.tolegen.kinolar.App
 import kz.tolegen.kinolar.R
 import kz.tolegen.kinolar.Screens.MovieList
 import kz.tolegen.kinolar.databinding.ViewRootBinding
+import kz.tolegen.kinolar.utils.BackButtonListener
 import javax.inject.Inject
 
 class RootView : AppCompatActivity() {
@@ -57,7 +57,7 @@ class RootView : AppCompatActivity() {
         ) {
             return
         } else
-              super.onBackPressed()
+            super.onBackPressed()
     }
 
 }

@@ -1,4 +1,4 @@
-package kz.tolegen.common
+package kz.tolegen.core
 
 import org.junit.Test
 

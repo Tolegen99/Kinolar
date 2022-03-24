@@ -23,6 +23,7 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 
-    implementation(Dependencies.Cicerone.core)
-
+    //AdapterDelegates
+    implementation(Dependencies.AdapterDelegates.core)
+    implementation(Dependencies.AdapterDelegates.dsl)
 }

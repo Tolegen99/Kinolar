@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="kz.tolegen.kinolar">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -13,7 +16,6 @@
         <activity
             android:name=".ui.root.RootView"
             android:exported="true"
-            android:label="@string/title_activity_root_view"
             android:theme="@style/Theme.Kinolar.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

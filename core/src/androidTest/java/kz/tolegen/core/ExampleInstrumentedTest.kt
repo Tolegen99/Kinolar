@@ -1,4 +1,4 @@
-package kz.tolegen.common
+package kz.tolegen.core
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

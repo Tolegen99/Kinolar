@@ -1,3 +1,3 @@
 object Module {
-    const val COMMON = ":common"
+    const val CORE = ":core"
 }

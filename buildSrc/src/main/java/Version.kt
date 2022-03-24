@@ -5,8 +5,12 @@ object Version {
     const val minSdk = 23
     const val targetSdk = 32
 
+    const val LIFECYCLE_VERSION = "2.4.1"
     const val CICERONE_VERSION = "7.1"
     const val DAGGER_VERSION = "2.40.5"
     const val RETROFIT_VERSION = "2.9.0"
     const val COROUTINE_VERSION = "1.4.2"
+    const val OKHTTP_VERSION = "4.7.2"
+    const val MOSHI_VERSION = "1.12.0"
+    const val ADAPTER_DELEGATE_VERSION = "4.3.2"
 }

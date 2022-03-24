@@ -1,8 +1,11 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
+    id("kotlin-parcelize")
     id("kotlin-kapt")
 }
+
+val apiUrlDev = "https://api.themoviedb.org/3"
 
 android {
     compileSdk = Version.compileSdk
@@ -19,12 +22,18 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
+        val API_ENDPOINT_FIELD = "API_ENDPOINT"
+        val API_KEY_FIELD = "API_KEY"
+
+        getByName("debug") {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
+            buildConfigField("String", API_ENDPOINT_FIELD, Constants.BASE_URL)
+            buildConfigField("String", API_KEY_FIELD, Constants.API_KEY)
         }
     }
     compileOptions {
@@ -35,13 +44,13 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
-        viewBinding = true
+        dataBinding = true
     }
 }
 
 
 dependencies {
-    implementation(project(Module.COMMON))
+    implementation(project(Module.CORE))
 
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.4.1")
@@ -68,4 +77,14 @@ dependencies {
     //Coroutine
     implementation(Dependencies.Coroutine.coroutinesCore)
     implementation(Dependencies.Coroutine.coroutinesAndroid)
+
+    //Okhttp
+    implementation(Dependencies.Okhttp.loggingInterceptor)
+
+    //Lifecycle
+    implementation(Dependencies.Lifecycle.liveData)
+
+    //Moshi
+    implementation(Dependencies.Moshi.core)
+    implementation(Dependencies.Moshi.codegen)
 }
