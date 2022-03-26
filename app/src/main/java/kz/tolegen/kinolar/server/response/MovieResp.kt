@@ -9,7 +9,7 @@ import kotlinx.parcelize.Parcelize
 @JsonClass(generateAdapter = true)
 data class MovieResp(
     @Json(name = "adult") val adult: Boolean,
-    @Json(name = "backdrop_path") val backdrop_path: String,
+    @Json(name = "backdrop_path") val backdrop_path: String?,
     @Json(name = "genre_ids") val genre_ids: List<Int>,
     @Json(name = "id") val id: Int,
     @Json(name = "original_language") val original_language: String,

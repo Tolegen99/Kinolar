@@ -65,7 +65,7 @@ class MoviesDelegate : BaseDelegate<MovieUiModel>() {
 data class MovieUiModel(
     val id: Long,
     val title: String,
-    val posterUrl: String
+    val posterUrl: String?
 ) : DiffItem {
     override fun areItemsTheSame(newItem: DiffItem): Boolean =
         newItem is MovieUiModel && this.id == newItem.id

@@ -8,4 +8,10 @@ interface Api {
 
     @GET("movie/top_rated?api_key=42a73e7c5255eff2d58bfc47361eeccb&language=ru")
     suspend fun getTopRatedMovies(): Response<MovieListResp>
+
+    @GET("movie/popular?api_key=42a73e7c5255eff2d58bfc47361eeccb&language=ru")
+    suspend fun getPopularMovies(): Response<MovieListResp>
+
+    @GET("movie/upcoming?api_key=42a73e7c5255eff2d58bfc47361eeccb&language=ru")
+    suspend fun getUpcomingMovies(): Response<MovieListResp>
 }

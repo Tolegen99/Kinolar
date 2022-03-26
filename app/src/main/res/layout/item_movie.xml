@@ -8,8 +8,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivPoster"
-        android:layout_width="250dp"
-        android:layout_height="150dp"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
         app:layout_constraintBottom_toTopOf="@id/tvTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,6 +20,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Монстр"
+        android:lines="2"
+        android:gravity="center"
         android:textAppearance="@style/TextAppearance.StyreneAlcRegular.White.16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

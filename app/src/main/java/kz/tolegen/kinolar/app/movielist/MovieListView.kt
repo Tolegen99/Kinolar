@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.get
 import androidx.fragment.app.viewModels
 import kz.tolegen.core.ui.adapters.base.BaseDelegateAdapter
 import kz.tolegen.core.ui.adapters.base.DiffItem
@@ -19,7 +18,17 @@ class MovieListView : BaseFragment<ViewMovieListBinding>(R.layout.view_movie_lis
 
     private val viewModel: MovieListViewModel by viewModels()
 
-    private val adapter = BaseDelegateAdapter.create {
+    private val adapterTopRatedMovies = BaseDelegateAdapter.create {
+        delegate {
+            MoviesDelegate()
+        }
+    }
+    private val adapterPopularMovies = BaseDelegateAdapter.create {
+        delegate {
+            MoviesDelegate()
+        }
+    }
+    private val adapterUpcomingMovies = BaseDelegateAdapter.create {
         delegate {
             MoviesDelegate()
         }
@@ -32,23 +41,56 @@ class MovieListView : BaseFragment<ViewMovieListBinding>(R.layout.view_movie_lis
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
 
-        binding.toolbar.toolbarTitle.text  = getString(R.string.app_name)
+        binding.toolbar.toolbarTitle.text = getString(R.string.app_name)
 
         viewModel.topRatedMovies.observe(viewLifecycleOwner, {
-            adapter.items = kotlin.run {
+            adapterTopRatedMovies.items = kotlin.run {
                 return@run mutableListOf<DiffItem>().apply {
                     addAll(it.movies.map {
                         MovieUiModel(
                             id = it.id.toLong(),
                             title = it.title,
-                            posterUrl = it.backdrop_path
+                            posterUrl = it.poster_path
                         )
                     })
                 }
             }
+            if (binding.rvTopRatedMovies.adapter == null) {
+                binding.rvTopRatedMovies.swapAdapter(adapterTopRatedMovies, true)
+            }
+        })
 
-            if (binding.rvMovies.adapter == null) {
-                binding.rvMovies.swapAdapter(adapter, true)
+        viewModel.popularMovies.observe(viewLifecycleOwner, {
+            adapterPopularMovies.items = kotlin.run {
+                return@run mutableListOf<DiffItem>().apply {
+                    addAll(it.movies.map {
+                        MovieUiModel(
+                            id = it.id.toLong(),
+                            title = it.title,
+                            posterUrl = it.poster_path
+                        )
+                    })
+                }
+            }
+            if (binding.rvPopularMovies.adapter == null) {
+                binding.rvPopularMovies.swapAdapter(adapterPopularMovies, true)
+            }
+        })
+
+        viewModel.upcomingMovies.observe(viewLifecycleOwner, {
+            adapterUpcomingMovies.items = kotlin.run {
+                return@run mutableListOf<DiffItem>().apply {
+                    addAll(it.movies.map {
+                        MovieUiModel(
+                            id = it.id.toLong(),
+                            title = it.title,
+                            posterUrl = it.poster_path
+                        )
+                    })
+                }
+            }
+            if (binding.rvUpcomingMovies.adapter == null) {
+                binding.rvUpcomingMovies.swapAdapter(adapterUpcomingMovies, true)
             }
         })
 

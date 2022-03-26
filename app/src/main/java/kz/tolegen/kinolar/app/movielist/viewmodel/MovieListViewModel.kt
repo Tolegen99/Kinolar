@@ -17,15 +17,37 @@ class MovieListViewModel : ViewModel() {
     init {
         App.INSTANCE.appComponent.inject(this)
         getTopRatedMovies()
+        getPopularMovies()
+        getUpcomingMovies()
     }
 
     private val _topRatedMovies = MutableLiveData<MovieListResp>()
     val topRatedMovies: LiveData<MovieListResp> = _topRatedMovies
+
+    private val _popularMovies = MutableLiveData<MovieListResp>()
+    val popularMovies: LiveData<MovieListResp> = _popularMovies
+
+    private val _upcomingMovies = MutableLiveData<MovieListResp>()
+    val upcomingMovies: LiveData<MovieListResp> = _upcomingMovies
 
     fun getTopRatedMovies() =
         viewModelScope.launch {
             val response = api.getTopRatedMovies()
             if (response.isSuccessful)
                 _topRatedMovies.value = response.body()
+        }
+
+    fun getPopularMovies() =
+        viewModelScope.launch {
+            val response = api.getPopularMovies()
+            if (response.isSuccessful)
+                _popularMovies.value = response.body()
+        }
+
+    fun getUpcomingMovies() =
+        viewModelScope.launch {
+            val response = api.getUpcomingMovies()
+            if (response.isSuccessful)
+                _upcomingMovies.value = response.body()
         }
 }
