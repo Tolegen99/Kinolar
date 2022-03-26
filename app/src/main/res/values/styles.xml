@@ -1,0 +1,48 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.Kinolar" parent="Theme.MaterialComponents.Light">
+
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:windowBackground">@color/color_black_light</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="android:navigationBarColor">@color/transparent</item>
+    </style>
+
+    <!--region StyreneAlcRegular-->
+    <style name="TextAppearance.StyreneAlcRegular" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/styrene_alc_regular</item>
+    </style>
+
+    <style name="TextAppearance.StyreneAlcRegular.White.16sp" parent="TextAppearance.GillSansMTSemiBold">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <!--endregion-->
+
+
+    <!--region GillSansMTSemiBold-->
+    <style name="TextAppearance.GillSansMTSemiBold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/gill_sans_mt_semi_bold</item>
+    </style>
+
+    <style name="TextAppearance.GillSansMTSemiBold.ColorRed.18sp" parent="TextAppearance.GillSansMTSemiBold">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/color_red</item>
+    </style>
+    <!--endregion-->
+
+    <!--region GillSansMTBold-->
+    <style name="TextAppearance.GillSansMTBold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/gill_sans_mt_bold</item>
+    </style>
+
+    <style name="TextAppearance.GillSansMTBold.White.21sp" parent="TextAppearance.GillSansMTBold">
+        <item name="android:textSize">21sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <!--endregion-->
+
+</resources>

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.get
 import androidx.fragment.app.viewModels
 import kz.tolegen.core.ui.adapters.base.BaseDelegateAdapter
 import kz.tolegen.core.ui.adapters.base.DiffItem
@@ -31,7 +32,7 @@ class MovieListView : BaseFragment<ViewMovieListBinding>(R.layout.view_movie_lis
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
 
-        viewModel.getTopRatedMovies()
+        binding.toolbar.toolbarTitle.text  = getString(R.string.app_name)
 
         viewModel.topRatedMovies.observe(viewLifecycleOwner, {
             adapter.items = kotlin.run {
@@ -40,7 +41,7 @@ class MovieListView : BaseFragment<ViewMovieListBinding>(R.layout.view_movie_lis
                         MovieUiModel(
                             id = it.id.toLong(),
                             title = it.title,
-                            description = it.overview
+                            posterUrl = it.backdrop_path
                         )
                     })
                 }

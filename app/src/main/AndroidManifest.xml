@@ -15,8 +15,7 @@
         android:theme="@style/Theme.Kinolar">
         <activity
             android:name=".app.root.RootView"
-            android:exported="true"
-            android:theme="@style/Theme.Kinolar.NoActionBar">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

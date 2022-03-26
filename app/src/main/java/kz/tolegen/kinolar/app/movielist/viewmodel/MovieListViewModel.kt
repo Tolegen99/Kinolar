@@ -16,6 +16,7 @@ class MovieListViewModel : ViewModel() {
 
     init {
         App.INSTANCE.appComponent.inject(this)
+        getTopRatedMovies()
     }
 
     private val _topRatedMovies = MutableLiveData<MovieListResp>()

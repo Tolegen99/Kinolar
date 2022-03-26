@@ -87,4 +87,11 @@ dependencies {
     //Moshi
     implementation(Dependencies.Moshi.core)
     implementation(Dependencies.Moshi.codegen)
+
+    //Glide
+    implementation(Dependencies.Glide.core)
+    annotationProcessor(Dependencies.Glide.compiler)
+
+    //Carbon
+    implementation(Dependencies.Carbon.core)
 }

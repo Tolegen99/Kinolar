@@ -44,5 +44,13 @@ object Dependencies {
         const val dsl = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:${Version.ADAPTER_DELEGATE_VERSION}"
     }
 
+    object Glide {
+        const val core = "com.github.bumptech.glide:glide:${Version.GLIDE_VERSION}"
+        const val compiler = "com.github.bumptech.glide:compiler:${Version.GLIDE_VERSION}"
+    }
+
+    object Carbon {
+        const val core = "tk.zielony:carbon:${Version.CARBON_VERSION}"
+    }
 
 }

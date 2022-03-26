@@ -1,4 +1,6 @@
 object Version {
+
+
     // android configuration
     const val buildTools = "30.0.3"
     const val compileSdk = 32
@@ -13,4 +15,6 @@ object Version {
     const val OKHTTP_VERSION = "4.7.2"
     const val MOSHI_VERSION = "1.12.0"
     const val ADAPTER_DELEGATE_VERSION = "4.3.2"
+    const val GLIDE_VERSION = "4.13.1"
+    const val CARBON_VERSION = "0.17.0"
 }
