@@ -8,6 +8,7 @@ import com.github.terrakok.cicerone.Router
 import kotlinx.coroutines.launch
 import kz.tolegen.kinolar.App
 import kz.tolegen.kinolar.Screens
+import kz.tolegen.kinolar.data.enums.MovieListType
 import kz.tolegen.kinolar.server.Api
 import kz.tolegen.kinolar.server.response.MovieListResp
 import javax.inject.Inject
@@ -37,21 +38,21 @@ class MovieListViewModel : ViewModel() {
 
     fun getTopRatedMovies() =
         viewModelScope.launch {
-            val response = api.getTopRatedMovies()
+            val response = api.getMovies(MovieListType.TOP_RATED.name.lowercase())
             if (response.isSuccessful)
                 _topRatedMovies.value = response.body()
         }
 
     fun getPopularMovies() =
         viewModelScope.launch {
-            val response = api.getPopularMovies()
+            val response = api.getMovies(MovieListType.POPULAR.name.lowercase())
             if (response.isSuccessful)
                 _popularMovies.value = response.body()
         }
 
     fun getUpcomingMovies() =
         viewModelScope.launch {
-            val response = api.getUpcomingMovies()
+            val response = api.getMovies(MovieListType.UPCOMING.name.lowercase())
             if (response.isSuccessful)
                 _upcomingMovies.value = response.body()
         }
