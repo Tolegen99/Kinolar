@@ -13,6 +13,8 @@ import kz.tolegen.kinolar.app.movielist.viewmodel.MovieListViewModel
 import kz.tolegen.kinolar.databinding.ViewMovieListBinding
 import kz.tolegen.kinolar.ui.delegates.MovieUiModel
 import kz.tolegen.kinolar.ui.delegates.MoviesDelegate
+import kz.tolegen.kinolar.ui.delegates.ShowMoreDelegate
+import kz.tolegen.kinolar.ui.delegates.ShowMoreUiModel
 
 class MovieListView : BaseFragment<ViewMovieListBinding>() {
 
@@ -24,6 +26,10 @@ class MovieListView : BaseFragment<ViewMovieListBinding>() {
                 viewModel.openMovieDetailScreen(it.id)
             }
         }
+        delegate {
+            ShowMoreDelegate {
+            }
+        }
     }
     private val adapterPopularMovies = BaseDelegateAdapter.create {
         delegate {
@@ -31,11 +37,19 @@ class MovieListView : BaseFragment<ViewMovieListBinding>() {
                 viewModel.openMovieDetailScreen(it.id)
             }
         }
+        delegate {
+            ShowMoreDelegate {
+            }
+        }
     }
     private val adapterUpcomingMovies = BaseDelegateAdapter.create {
         delegate {
             MoviesDelegate {
                 viewModel.openMovieDetailScreen(it.id)
+            }
+        }
+        delegate {
+            ShowMoreDelegate {
             }
         }
     }
@@ -59,6 +73,7 @@ class MovieListView : BaseFragment<ViewMovieListBinding>() {
                             posterUrl = it.poster_path
                         )
                     })
+                    add(ShowMoreUiModel())
                 }
             }
             if (binding.rvTopRatedMovies.adapter == null) {
@@ -76,6 +91,7 @@ class MovieListView : BaseFragment<ViewMovieListBinding>() {
                             posterUrl = it.poster_path
                         )
                     })
+                    add(ShowMoreUiModel())
                 }
             }
             if (binding.rvPopularMovies.adapter == null) {
@@ -93,6 +109,7 @@ class MovieListView : BaseFragment<ViewMovieListBinding>() {
                             posterUrl = it.poster_path
                         )
                     })
+                    add(ShowMoreUiModel())
                 }
             }
             if (binding.rvUpcomingMovies.adapter == null) {

@@ -1,6 +1,7 @@
 package kz.tolegen.kinolar.ui.delegates
 
 import android.graphics.drawable.Drawable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.bumptech.glide.Glide

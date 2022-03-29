@@ -5,11 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.target.DrawableImageViewTarget
 import com.bumptech.glide.request.transition.Transition
+import kz.tolegen.core.ext.bindCLick
+import kz.tolegen.core.ext.visible
 import kz.tolegen.core.ui.BaseFragment
 import kz.tolegen.kinolar.R
 import kz.tolegen.kinolar.app.moviedetail.viewmodel.MovieDetailViewModel
@@ -51,7 +54,12 @@ class MovieDetailView : BaseFragment<ViewMovieDetailBinding>() {
         })
 
         return binding {
-            toolbar.toolbarTitle.text = getString(R.string.movie_detail)
+            toolbar.apply {
+                toolbarBackBtn.visible()
+                toolbarBackBtn bindCLick { viewModel.onBackPressed() }
+
+                toolbarTitle.text = getString(R.string.movie_detail)
+            }
         }.root
     }
 
