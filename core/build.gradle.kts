@@ -15,6 +15,10 @@ android {
 
         consumerProguardFiles("consumer-rules.pro")
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {

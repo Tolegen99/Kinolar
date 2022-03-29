@@ -1,6 +1,7 @@
 package kz.tolegen.kinolar.di
 
 import dagger.Component
+import kz.tolegen.kinolar.app.moviedetail.viewmodel.MovieDetailViewModel
 import kz.tolegen.kinolar.di.module.NavigationModule
 import kz.tolegen.kinolar.di.module.NetworkModule
 import kz.tolegen.kinolar.app.movielist.viewmodel.MovieListViewModel
@@ -19,5 +20,5 @@ interface AppComponent {
 
 
     fun inject(viewModel: MovieListViewModel)
-
+    fun inject(viewModel: MovieDetailViewModel)
 }

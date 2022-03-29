@@ -25,6 +25,9 @@ android {
         val API_ENDPOINT_FIELD = "API_ENDPOINT"
         val API_KEY_FIELD = "API_KEY"
 
+        val API_ENDPOINT = "\"https://api.themoviedb.org/3/\""
+        val API_KEY = "\"42a73e7c5255eff2d58bfc47361eeccb\""
+
         getByName("debug") {
             isMinifyEnabled = false
             proguardFiles(
@@ -32,8 +35,8 @@ android {
                 "proguard-rules.pro"
             )
 
-            buildConfigField("String", API_ENDPOINT_FIELD, Constants.BASE_URL)
-            buildConfigField("String", API_KEY_FIELD, Constants.API_KEY)
+            buildConfigField("String", API_ENDPOINT_FIELD, API_ENDPOINT)
+            buildConfigField("String", API_KEY_FIELD, API_KEY)
         }
     }
     compileOptions {
@@ -94,4 +97,8 @@ dependencies {
 
     //Carbon
     implementation(Dependencies.Carbon.core)
+
+    //Chucker
+    debugImplementation(Dependencies.Chucker.chucker)
+    releaseImplementation(Dependencies.Chucker.chuckerNoOp)
 }

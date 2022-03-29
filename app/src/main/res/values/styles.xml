@@ -11,12 +11,30 @@
         <item name="android:navigationBarColor">@color/transparent</item>
     </style>
 
+
     <!--region StyreneAlcRegular-->
     <style name="TextAppearance.StyreneAlcRegular" parent="TextAppearance.AppCompat">
         <item name="android:fontFamily">@font/styrene_alc_regular</item>
     </style>
 
     <style name="TextAppearance.StyreneAlcRegular.White.16sp" parent="TextAppearance.GillSansMTSemiBold">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextAppearance.StyreneAlcRegular.White.14sp" parent="TextAppearance.StyreneAlcRegular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <!--endregion-->
+
+
+    <!--region StyreneAlcBold-->
+    <style name="TextAppearance.StyreneAlcBold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/styrene_alc_bold</item>
+    </style>
+
+    <style name="TextAppearance.StyreneAlcBold.White.16sp" parent="TextAppearance.StyreneAlcBold">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
@@ -34,6 +52,7 @@
     </style>
     <!--endregion-->
 
+
     <!--region GillSansMTBold-->
     <style name="TextAppearance.GillSansMTBold" parent="TextAppearance.AppCompat">
         <item name="android:fontFamily">@font/gill_sans_mt_bold</item>
@@ -44,5 +63,6 @@
         <item name="android:textColor">@color/white</item>
     </style>
     <!--endregion-->
+
 
 </resources>

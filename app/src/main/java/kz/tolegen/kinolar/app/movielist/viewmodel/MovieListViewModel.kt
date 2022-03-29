@@ -4,8 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.github.terrakok.cicerone.Router
 import kotlinx.coroutines.launch
 import kz.tolegen.kinolar.App
+import kz.tolegen.kinolar.Screens
 import kz.tolegen.kinolar.server.Api
 import kz.tolegen.kinolar.server.response.MovieListResp
 import javax.inject.Inject
@@ -13,6 +15,9 @@ import javax.inject.Inject
 class MovieListViewModel : ViewModel() {
     @Inject
     lateinit var api: Api
+
+    @Inject
+    lateinit var router: Router
 
     init {
         App.INSTANCE.appComponent.inject(this)
@@ -50,4 +55,7 @@ class MovieListViewModel : ViewModel() {
             if (response.isSuccessful)
                 _upcomingMovies.value = response.body()
         }
+
+    fun openMovieDetailScreen(movieId: Long) =
+        router.navigateTo(Screens.movieDetail(movieId))
 }

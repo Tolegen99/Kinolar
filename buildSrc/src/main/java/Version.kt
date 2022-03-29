@@ -17,4 +17,5 @@ object Version {
     const val ADAPTER_DELEGATE_VERSION = "4.3.2"
     const val GLIDE_VERSION = "4.13.1"
     const val CARBON_VERSION = "0.17.0"
+    const val CHUCKER_VERSION = "3.5.2"
 }

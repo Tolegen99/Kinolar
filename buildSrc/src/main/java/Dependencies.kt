@@ -53,4 +53,9 @@ object Dependencies {
         const val core = "tk.zielony:carbon:${Version.CARBON_VERSION}"
     }
 
+    object Chucker {
+        const val chucker = "com.github.chuckerteam.chucker:library:${Version.CHUCKER_VERSION}"
+        const val chuckerNoOp = "com.github.chuckerteam.chucker:library-no-op:${Version.CHUCKER_VERSION}"
+    }
+
 }

@@ -1,20 +1,15 @@
-package kz.tolegen.kinolar.base
+package kz.tolegen.core.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.inflate
 import android.view.ViewGroup
 import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment<Binding : ViewBinding> constructor(
-    @LayoutRes private val contentLayoutId: Int
-) : Fragment() {
-
-//    protected var bindingComponent: DataBindingComponent? = DataBindingUtil.getDefaultComponent()
+abstract class BaseFragment<Binding : ViewBinding> : Fragment() {
 
     private var _binding: Binding? = null
 

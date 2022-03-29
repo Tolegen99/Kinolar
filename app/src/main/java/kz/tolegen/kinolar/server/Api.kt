@@ -1,17 +1,26 @@
 package kz.tolegen.kinolar.server
 
+import kz.tolegen.kinolar.server.response.MovieDetailResp
 import kz.tolegen.kinolar.server.response.MovieListResp
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface Api {
 
-    @GET("movie/top_rated?api_key=42a73e7c5255eff2d58bfc47361eeccb&language=ru")
-    suspend fun getTopRatedMovies(): Response<MovieListResp>
+    @GET("movie/top_rated")
+    suspend fun getTopRatedMovies(
+    ): Response<MovieListResp>
 
-    @GET("movie/popular?api_key=42a73e7c5255eff2d58bfc47361eeccb&language=ru")
+    @GET("movie/popular")
     suspend fun getPopularMovies(): Response<MovieListResp>
 
-    @GET("movie/upcoming?api_key=42a73e7c5255eff2d58bfc47361eeccb&language=ru")
+    @GET("movie/upcoming")
     suspend fun getUpcomingMovies(): Response<MovieListResp>
+
+    @GET("movie/{movieId}")
+    suspend fun getMovieDetail(
+        @Path("movieId") movieId: Long
+    ): Response<MovieDetailResp>
 }

@@ -7,9 +7,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 @JsonClass(generateAdapter = true)
-data class MovieListResp(
-    @Json(name = "page") val page: Long,
-    @Json(name = "results") val movies: List<MovieResp>,
-    @Json(name = "total_pages") val totalPages: Int,
-    @Json(name = "total_results") val totalResults: Int
+data class GenreResp(
+    @Json(name = "id")val id: Long,
+    @Json(name = "name")val name: String
 ) : Parcelable
