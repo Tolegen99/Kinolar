@@ -22,6 +22,7 @@
             android:layout_marginStart="7dp"
             android:padding="5dp"
             android:src="@drawable/ic_back"
+            android:tint="@color/white_selector"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

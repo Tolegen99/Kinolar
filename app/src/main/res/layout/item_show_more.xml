@@ -9,10 +9,12 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivPoster"
+        Of="@id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_show_more"
-        app:layout_constraintBottom_toBottomOf="parent" Of="@id/tvTitle"
+        android:tint="@color/red_selector"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,12 +23,13 @@
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Ещё"
         android:gravity="center"
+        android:text="Ещё"
+        android:textColor="@color/white_selector"
         android:textAppearance="@style/TextAppearance.StyreneAlcRegular.White.16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivPoster"/>
+        app:layout_constraintTop_toBottomOf="@id/ivPoster" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
