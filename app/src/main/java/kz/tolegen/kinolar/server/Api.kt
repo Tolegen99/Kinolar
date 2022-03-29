@@ -1,11 +1,10 @@
 package kz.tolegen.kinolar.server
 
-import kz.tolegen.kinolar.server.response.MovieDetailResp
-import kz.tolegen.kinolar.server.response.MovieListResp
+import kz.tolegen.kinolar.data.models.classes.response.MovieDetailResp
+import kz.tolegen.kinolar.data.models.classes.response.MovieListResp
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
-import retrofit2.http.Query
 
 interface Api {
 

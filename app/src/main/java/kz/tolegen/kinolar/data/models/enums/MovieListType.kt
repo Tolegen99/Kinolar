@@ -1,4 +1,4 @@
-package kz.tolegen.kinolar.data.enums
+package kz.tolegen.kinolar.data.models.enums
 
 enum class MovieListType{
     TOP_RATED,

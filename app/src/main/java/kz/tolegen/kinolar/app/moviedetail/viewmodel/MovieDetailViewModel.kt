@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import kz.tolegen.kinolar.App
 import kz.tolegen.kinolar.server.Api
-import kz.tolegen.kinolar.server.response.MovieDetailResp
+import kz.tolegen.kinolar.data.models.classes.response.MovieDetailResp
 import javax.inject.Inject
 
 class MovieDetailViewModel : ViewModel() {

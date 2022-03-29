@@ -8,9 +8,9 @@ import com.github.terrakok.cicerone.Router
 import kotlinx.coroutines.launch
 import kz.tolegen.kinolar.App
 import kz.tolegen.kinolar.Screens
-import kz.tolegen.kinolar.data.enums.MovieListType
+import kz.tolegen.kinolar.data.models.enums.MovieListType
 import kz.tolegen.kinolar.server.Api
-import kz.tolegen.kinolar.server.response.MovieListResp
+import kz.tolegen.kinolar.data.models.classes.response.MovieListResp
 import javax.inject.Inject
 
 class MovieListViewModel : ViewModel() {

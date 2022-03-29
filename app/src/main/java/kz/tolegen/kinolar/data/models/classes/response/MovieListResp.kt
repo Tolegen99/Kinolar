@@ -1,4 +1,4 @@
-package kz.tolegen.kinolar.server.response
+package kz.tolegen.kinolar.data.models.classes.response
 
 import android.os.Parcelable
 import com.squareup.moshi.Json
