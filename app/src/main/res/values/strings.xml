@@ -7,4 +7,7 @@
     <string name="upcoming_movies">Предстоящие</string>
 
     <string name="movie_detail">Информация о фильме</string>
+    <string name="title">Название:</string>
+    <string name="tagline">Слоган:</string>
+    <string name="overview">Описание:</string>
 </resources>

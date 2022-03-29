@@ -46,7 +46,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ivBackdrop"
-                app:title="Название:" />
+                app:title="@string/title" />
 
             <kz.tolegen.kinolar.ui.views.TitleValueView
                 android:id="@+id/tvlTagline"
@@ -58,7 +58,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvlTitle"
-                app:title="Слоган:" />
+                app:title="@string/tagline" />
 
 
             <kz.tolegen.kinolar.ui.views.TitleValueView
@@ -71,7 +71,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvlTagline"
-                app:title="Описание:" />
+                app:title="@string/overview" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

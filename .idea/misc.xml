@@ -4,12 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Tolegen Omirbekov/.gradle/caches/transforms-3/e9bc8bc43adc8707a16edb9eeabcc8f9/transformed/jetified-skeleton-1.1.2/res/layout/layout_default_item_skeleton.xml" value="0.259375" />
+        <entry key="..\:/Users/Tolegen Omirbekov/AndroidStudioProjects/Kinolar/app/src/main/res/drawable/bg_item_movie_show_more_1.xml" value="0.2712820512820513" />
+        <entry key="..\:/Users/Tolegen Omirbekov/AndroidStudioProjects/Kinolar/app/src/main/res/drawable/bg_item_movie_show_more_2.xml" value="0.2712820512820513" />
+        <entry key="..\:/Users/Tolegen Omirbekov/AndroidStudioProjects/Kinolar/app/src/main/res/drawable/bg_item_movie_yet.xml" value="0.2712820512820513" />
+        <entry key="..\:/Users/Tolegen Omirbekov/AndroidStudioProjects/Kinolar/app/src/main/res/drawable/ic_group_2.xml" value="0.2712820512820513" />
         <entry key="..\:/Users/Tolegen Omirbekov/AndroidStudioProjects/Kinolar/app/src/main/res/layout/item_load_more_vertical_footer.xml" value="0.1" />
         <entry key="..\:/Users/Tolegen Omirbekov/AndroidStudioProjects/Kinolar/app/src/main/res/layout/item_movie.xml" value="0.264" />
+        <entry key="..\:/Users/Tolegen Omirbekov/AndroidStudioProjects/Kinolar/app/src/main/res/layout/item_movie_show_more.xml" value="0.259375" />
         <entry key="..\:/Users/Tolegen Omirbekov/AndroidStudioProjects/Kinolar/app/src/main/res/layout/title_value_field.xml" value="0.2713541666666667" />
         <entry key="..\:/Users/Tolegen Omirbekov/AndroidStudioProjects/Kinolar/app/src/main/res/layout/toolbar_transparent_with_title.xml" value="0.12" />
         <entry key="..\:/Users/Tolegen Omirbekov/AndroidStudioProjects/Kinolar/app/src/main/res/layout/view_movie_detail.xml" value="0.264" />
-        <entry key="..\:/Users/Tolegen Omirbekov/AndroidStudioProjects/Kinolar/app/src/main/res/layout/view_movie_list.xml" value="0.1" />
+        <entry key="..\:/Users/Tolegen Omirbekov/AndroidStudioProjects/Kinolar/app/src/main/res/layout/view_movie_list.xml" value="0.264" />
         <entry key="..\:/Users/Tolegen Omirbekov/AndroidStudioProjects/Kinolar/app/src/main/res/layout/view_root.xml" value="0.15092592592592594" />
       </map>
     </option>
