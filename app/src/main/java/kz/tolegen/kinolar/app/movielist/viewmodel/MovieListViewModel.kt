@@ -7,13 +7,13 @@ import androidx.lifecycle.viewModelScope
 import com.github.terrakok.cicerone.Router
 import kotlinx.coroutines.launch
 import kz.tolegen.kinolar.App
-import kz.tolegen.kinolar.Screens
+import kz.tolegen.kinolar.data.models.classes.response.MovieListResp
 import kz.tolegen.kinolar.data.models.enums.MovieListType
 import kz.tolegen.kinolar.server.Api
-import kz.tolegen.kinolar.data.models.classes.response.MovieListResp
 import javax.inject.Inject
 
 class MovieListViewModel : ViewModel() {
+
     @Inject
     lateinit var api: Api
 
@@ -22,41 +22,14 @@ class MovieListViewModel : ViewModel() {
 
     init {
         App.INSTANCE.appComponent.inject(this)
-        getTopRatedMovies()
-        getPopularMovies()
-        getUpcomingMovies()
     }
 
-    private val _topRatedMovies = MutableLiveData<MovieListResp>()
-    val topRatedMovies: LiveData<MovieListResp> = _topRatedMovies
+    private val _movies = MutableLiveData<MovieListResp>()
+    val movies: LiveData<MovieListResp> = _movies
 
-    private val _popularMovies = MutableLiveData<MovieListResp>()
-    val popularMovies: LiveData<MovieListResp> = _popularMovies
-
-    private val _upcomingMovies = MutableLiveData<MovieListResp>()
-    val upcomingMovies: LiveData<MovieListResp> = _upcomingMovies
-
-    fun getTopRatedMovies() =
-        viewModelScope.launch {
-            val response = api.getMovies(MovieListType.TOP_RATED.name.lowercase())
-            if (response.isSuccessful)
-                _topRatedMovies.value = response.body()
-        }
-
-    fun getPopularMovies() =
-        viewModelScope.launch {
-            val response = api.getMovies(MovieListType.POPULAR.name.lowercase())
-            if (response.isSuccessful)
-                _popularMovies.value = response.body()
-        }
-
-    fun getUpcomingMovies() =
-        viewModelScope.launch {
-            val response = api.getMovies(MovieListType.UPCOMING.name.lowercase())
-            if (response.isSuccessful)
-                _upcomingMovies.value = response.body()
-        }
-
-    fun openMovieDetailScreen(movieId: Long) =
-        router.navigateTo(Screens.movieDetail(movieId))
+    fun getMovies(movieListType: MovieListType) = viewModelScope.launch {
+        val response = api.getMovies(movieListType.name.lowercase())
+        if (response.isSuccessful)
+            _movies.value = response.body()
+    }
 }

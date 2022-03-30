@@ -9,7 +9,7 @@ import com.github.terrakok.cicerone.Replace
 import com.github.terrakok.cicerone.androidx.AppNavigator
 import kz.tolegen.kinolar.App
 import kz.tolegen.kinolar.R
-import kz.tolegen.kinolar.Screens.movieList
+import kz.tolegen.kinolar.Screens.home
 import kz.tolegen.kinolar.databinding.ViewRootBinding
 import kz.tolegen.kinolar.utils.BackButtonListener
 import javax.inject.Inject
@@ -36,7 +36,7 @@ class RootView : AppCompatActivity() {
         setContentView(binding.root)
 
         if (savedInstanceState == null) {
-            navigator.applyCommands(arrayOf<Command>(Replace(movieList())))
+            navigator.applyCommands(arrayOf<Command>(Replace(home())))
         }
     }
 

@@ -69,9 +69,7 @@ class MovieDetailView : BaseFragment<ViewMovieDetailBinding>() {
     ): ViewMovieDetailBinding = ViewMovieDetailBinding.inflate(inflater, container, false)
 
     companion object {
-
         private const val EXTRA_MOVIE_ID = "extra_movie_id"
-
         fun create(movieId: Long) = MovieDetailView().apply {
             arguments = Bundle().apply {
                 putLong(EXTRA_MOVIE_ID, movieId)

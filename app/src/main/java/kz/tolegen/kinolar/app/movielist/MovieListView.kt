@@ -6,123 +6,46 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import kz.tolegen.core.ui.BaseFragment
-import kz.tolegen.core.ui.adapters.base.BaseDelegateAdapter
-import kz.tolegen.core.ui.adapters.base.DiffItem
-import kz.tolegen.kinolar.R
 import kz.tolegen.kinolar.app.movielist.viewmodel.MovieListViewModel
+import kz.tolegen.kinolar.data.models.enums.MovieListType
 import kz.tolegen.kinolar.databinding.ViewMovieListBinding
-import kz.tolegen.kinolar.ui.delegates.MovieUiModel
-import kz.tolegen.kinolar.ui.delegates.MoviesDelegate
-import kz.tolegen.kinolar.ui.delegates.ShowMoreDelegate
-import kz.tolegen.kinolar.ui.delegates.ShowMoreUiModel
 
 class MovieListView : BaseFragment<ViewMovieListBinding>() {
 
     private val viewModel: MovieListViewModel by viewModels()
 
-    private val adapterTopRatedMovies = BaseDelegateAdapter.create {
-        delegate {
-            MoviesDelegate {
-                viewModel.openMovieDetailScreen(it.id)
-            }
-        }
-        delegate {
-            ShowMoreDelegate {
-            }
-        }
-    }
-    private val adapterPopularMovies = BaseDelegateAdapter.create {
-        delegate {
-            MoviesDelegate {
-                viewModel.openMovieDetailScreen(it.id)
-            }
-        }
-        delegate {
-            ShowMoreDelegate {
-            }
-        }
-    }
-    private val adapterUpcomingMovies = BaseDelegateAdapter.create {
-        delegate {
-            MoviesDelegate {
-                viewModel.openMovieDetailScreen(it.id)
-            }
-        }
-        delegate {
-            ShowMoreDelegate {
-            }
-        }
-    }
+    private val movieListType: MovieListType
+        get() = arguments!!.getSerializable(EXTRA_MOVIE_LIST_TYPE) as MovieListType
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
 
-        binding.toolbar.toolbarTitle.text = getString(R.string.app_name)
+        viewModel.getMovies(movieListType)
 
-        viewModel.topRatedMovies.observe(viewLifecycleOwner, {
-            adapterTopRatedMovies.items = kotlin.run {
-                return@run mutableListOf<DiffItem>().apply {
-                    addAll(it.movies.map {
-                        MovieUiModel(
-                            id = it.id,
-                            title = it.title,
-                            posterUrl = it.poster_path
-                        )
-                    })
-                    add(ShowMoreUiModel())
-                }
-            }
-            if (binding.rvTopRatedMovies.adapter == null) {
-                binding.rvTopRatedMovies.swapAdapter(adapterTopRatedMovies, true)
-            }
+        viewModel.movies.observe(viewLifecycleOwner, {
+
         })
 
-        viewModel.popularMovies.observe(viewLifecycleOwner, {
-            adapterPopularMovies.items = kotlin.run {
-                return@run mutableListOf<DiffItem>().apply {
-                    addAll(it.movies.map {
-                        MovieUiModel(
-                            id = it.id,
-                            title = it.title,
-                            posterUrl = it.poster_path
-                        )
-                    })
-                    add(ShowMoreUiModel())
-                }
-            }
-            if (binding.rvPopularMovies.adapter == null) {
-                binding.rvPopularMovies.swapAdapter(adapterPopularMovies, true)
-            }
-        })
-
-        viewModel.upcomingMovies.observe(viewLifecycleOwner, {
-            adapterUpcomingMovies.items = kotlin.run {
-                return@run mutableListOf<DiffItem>().apply {
-                    addAll(it.movies.map {
-                        MovieUiModel(
-                            id = it.id,
-                            title = it.title,
-                            posterUrl = it.poster_path
-                        )
-                    })
-                    add(ShowMoreUiModel())
-                }
-            }
-            if (binding.rvUpcomingMovies.adapter == null) {
-                binding.rvUpcomingMovies.swapAdapter(adapterUpcomingMovies, true)
-            }
-        })
 
         return binding {
+
         }.root
     }
 
-    override fun provideViewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): ViewMovieListBinding = ViewMovieListBinding.inflate(inflater, container, false)
+    override fun provideViewBinding(inflater: LayoutInflater, container: ViewGroup?) =
+        ViewMovieListBinding.inflate(inflater, container, false)
+
+    companion object {
+        private const val EXTRA_MOVIE_LIST_TYPE = "extra_movie_list_type"
+        fun create(movieListType: MovieListType) = MovieListView().apply {
+            arguments = Bundle().apply {
+                putSerializable(EXTRA_MOVIE_LIST_TYPE, movieListType)
+            }
+        }
+
+    }
 }
