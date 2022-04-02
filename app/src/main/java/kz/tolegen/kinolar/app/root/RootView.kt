@@ -2,6 +2,7 @@ package kz.tolegen.kinolar.app.root
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.Navigator
 import com.github.terrakok.cicerone.NavigatorHolder
@@ -14,9 +15,9 @@ import kz.tolegen.kinolar.databinding.ViewRootBinding
 import kz.tolegen.kinolar.utils.BackButtonListener
 import javax.inject.Inject
 
-class RootView : AppCompatActivity() {
+class RootView : AppCompatActivity(R.layout.view_root) {
 
-    private lateinit var binding: ViewRootBinding
+    private val binding by viewBinding(ViewRootBinding::bind)
 
     @Inject
     lateinit var navigatorHolder: NavigatorHolder
@@ -31,9 +32,6 @@ class RootView : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         App.INSTANCE.appComponent.inject(this)
         super.onCreate(savedInstanceState)
-
-        binding = ViewRootBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
         if (savedInstanceState == null) {
             navigator.applyCommands(arrayOf<Command>(Replace(home())))

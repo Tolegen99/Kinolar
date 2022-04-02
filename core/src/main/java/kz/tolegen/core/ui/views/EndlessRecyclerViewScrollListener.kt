@@ -37,7 +37,7 @@ abstract class EndlessRecyclerViewScrollListener : RecyclerView.OnScrollListener
             is LinearLayoutManager -> layoutManager.findLastVisibleItemPosition()
         }
 
-        if ((lastVisibleItemPosition + visibleThreshold) > totalItemCount && dx > 0)
+        if ((lastVisibleItemPosition + visibleThreshold) > totalItemCount && dy > 0)
             onLoadMore()
     }
 

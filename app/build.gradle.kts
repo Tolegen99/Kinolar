@@ -101,4 +101,7 @@ dependencies {
     //Chucker
     debugImplementation(Dependencies.Chucker.chucker)
     releaseImplementation(Dependencies.Chucker.chuckerNoOp)
+
+    //ViewBindingPropertyDelegate
+    implementation(Dependencies.ViewBindingPropertyDelegate.core)
 }

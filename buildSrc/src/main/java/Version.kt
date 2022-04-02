@@ -18,4 +18,5 @@ object Version {
     const val GLIDE_VERSION = "4.13.1"
     const val CARBON_VERSION = "0.17.0"
     const val CHUCKER_VERSION = "3.5.2"
+    const val VIEW_BINDING_PROPERTY_DELEGATE_VERSION = "1.5.6"
 }

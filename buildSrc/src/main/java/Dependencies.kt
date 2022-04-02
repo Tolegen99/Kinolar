@@ -41,7 +41,8 @@ object Dependencies {
 
     object AdapterDelegates {
         const val core = "com.hannesdorfmann:adapterdelegates4:${Version.ADAPTER_DELEGATE_VERSION}"
-        const val dsl = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:${Version.ADAPTER_DELEGATE_VERSION}"
+        const val dsl =
+            "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:${Version.ADAPTER_DELEGATE_VERSION}"
     }
 
     object Glide {
@@ -55,7 +56,14 @@ object Dependencies {
 
     object Chucker {
         const val chucker = "com.github.chuckerteam.chucker:library:${Version.CHUCKER_VERSION}"
-        const val chuckerNoOp = "com.github.chuckerteam.chucker:library-no-op:${Version.CHUCKER_VERSION}"
+        const val chuckerNoOp =
+            "com.github.chuckerteam.chucker:library-no-op:${Version.CHUCKER_VERSION}"
     }
+
+    object ViewBindingPropertyDelegate {
+        const val core =
+            "com.github.kirich1409:viewbindingpropertydelegate-noreflection:${Version.VIEW_BINDING_PROPERTY_DELEGATE_VERSION}"
+    }
+
 
 }
