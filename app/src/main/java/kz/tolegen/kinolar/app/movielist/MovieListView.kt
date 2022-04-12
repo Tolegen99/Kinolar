@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
 import kz.tolegen.core.ui.adapters.base.BaseDelegateAdapter
 import kz.tolegen.core.ui.adapters.base.DiffItem
-import kz.tolegen.core.ui.views.EndlessRecyclerViewScrollListene
+import kz.tolegen.core.ui.views.EndlessRecyclerViewScrollListener
 import kz.tolegen.kinolar.R
 import kz.tolegen.kinolar.app.movielist.viewmodel.MovieListViewModel
 import kz.tolegen.kinolar.data.models.enums.MovieListType
@@ -86,7 +86,7 @@ class MovieListView : Fragment(R.layout.view_movie_list) {
 
                 clearOnScrollListeners()
 
-                addOnScrollListener(object : EndlessRecyclerViewScrollListene(lm) {
+                addOnScrollListener(object : EndlessRecyclerViewScrollListener(lm) {
                     override fun onLoadMore() {
                         viewModel.loadNextPage(movieListType)
                     }
