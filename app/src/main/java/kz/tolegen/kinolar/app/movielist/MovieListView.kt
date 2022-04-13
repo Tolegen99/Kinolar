@@ -50,7 +50,7 @@ class MovieListView : Fragment(R.layout.view_movie_list) {
                             addAll(it.map {
                                 MovieUiModel(
                                     id = it.id,
-                                    title = it.title,
+                                    title = it.title ?: "",
                                     posterUrl = it.poster_path
                                 )
                             })

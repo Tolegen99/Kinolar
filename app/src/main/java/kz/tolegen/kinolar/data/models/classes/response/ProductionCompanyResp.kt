@@ -10,6 +10,6 @@ import kotlinx.parcelize.Parcelize
 data class ProductionCompanyResp(
     @Json(name = "id") val id: Long,
     @Json(name = "logo_path") val logo_path: String?,
-    @Json(name = "name") val name: String,
-    @Json(name = "origin_country") val origin_country: String
+    @Json(name = "name") val name: String?,
+    @Json(name = "origin_country") val origin_country: String?
 ) : Parcelable

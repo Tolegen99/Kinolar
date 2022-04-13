@@ -80,7 +80,7 @@ class HomeView : Fragment(R.layout.view_home) {
                         addAll(it.movies.map { movie ->
                             MovieUiModel(
                                 id = movie.id,
-                                title = movie.title,
+                                title = movie.title ?: "",
                                 posterUrl = movie.poster_path
                             )
                         })
@@ -98,7 +98,7 @@ class HomeView : Fragment(R.layout.view_home) {
                         addAll(it.movies.map {
                             MovieUiModel(
                                 id = it.id,
-                                title = it.title,
+                                title = it.title ?: "",
                                 posterUrl = it.poster_path
                             )
                         })
@@ -116,7 +116,7 @@ class HomeView : Fragment(R.layout.view_home) {
                         addAll(it.movies.map {
                             MovieUiModel(
                                 id = it.id,
-                                title = it.title,
+                                title = it.title ?: "",
                                 posterUrl = it.poster_path
                             )
                         })

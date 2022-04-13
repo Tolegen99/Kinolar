@@ -61,12 +61,14 @@ class MovieDetailView : Fragment(R.layout.view_movie_detail) {
 
                 adapter.items = kotlin.run {
                     return@run mutableListOf<DiffItem>().apply {
-                        addAll(it.genres.map { genre ->
-                            SlotGenreUiModel(
-                                id = genre.id,
-                                name = genre.name
-                            )
-                        })
+                        it.genres?.let { genres ->
+                            addAll(genres.map { genre ->
+                                SlotGenreUiModel(
+                                    id = genre.id,
+                                    name = genre.name
+                                )
+                            })
+                        }
                     }
                 }
                 if (binding.rvGenres.adapter == null) {
