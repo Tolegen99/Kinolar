@@ -65,5 +65,10 @@ object Dependencies {
             "com.github.kirich1409:viewbindingpropertydelegate-noreflection:${Version.VIEW_BINDING_PROPERTY_DELEGATE_VERSION}"
     }
 
+    object Flexbox {
+        const val core =
+            "com.google.android.flexbox:flexbox:${Version.FLEXBOX_VERSION}"
+    }
+
 
 }

@@ -104,4 +104,7 @@ dependencies {
 
     //ViewBindingPropertyDelegate
     implementation(Dependencies.ViewBindingPropertyDelegate.core)
+
+    //Flexbox
+    implementation(Dependencies.Flexbox.core)
 }

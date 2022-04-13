@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
+import kz.tolegen.core.ext.bindCLick
+import kz.tolegen.core.ext.visible
 import kz.tolegen.core.ui.adapters.base.BaseDelegateAdapter
 import kz.tolegen.core.ui.adapters.base.DiffItem
 import kz.tolegen.kinolar.R
@@ -63,16 +65,23 @@ class HomeView : Fragment(R.layout.view_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        with(binding) {
+            toolbar.apply {
+
+                toolbarTitle.text = getString(R.string.app_name)
+            }
+        }
+
         with(viewModel) {
 
             topRatedMovies.observe(viewLifecycleOwner, {
                 adapterTopRatedMovies.items = kotlin.run {
                     return@run mutableListOf<DiffItem>().apply {
-                        addAll(it.movies.map {
+                        addAll(it.movies.map { movie ->
                             MovieUiModel(
-                                id = it.id,
-                                title = it.title,
-                                posterUrl = it.poster_path
+                                id = movie.id,
+                                title = movie.title,
+                                posterUrl = movie.poster_path
                             )
                         })
                         add(ShowMoreUiModel())

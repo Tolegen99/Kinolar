@@ -10,11 +10,18 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.target.DrawableImageViewTarget
 import com.bumptech.glide.request.transition.Transition
+import com.google.android.flexbox.FlexDirection
+import com.google.android.flexbox.FlexboxLayoutManager
+import com.google.android.flexbox.JustifyContent
 import kz.tolegen.core.ext.bindCLick
 import kz.tolegen.core.ext.visible
+import kz.tolegen.core.ui.adapters.base.BaseDelegateAdapter
+import kz.tolegen.core.ui.adapters.base.DiffItem
 import kz.tolegen.kinolar.R
 import kz.tolegen.kinolar.app.moviedetail.viewmodel.MovieDetailViewModel
 import kz.tolegen.kinolar.databinding.ViewMovieDetailBinding
+import kz.tolegen.kinolar.ui.delegates.SlotGenreDelegate
+import kz.tolegen.kinolar.ui.delegates.SlotGenreUiModel
 
 class MovieDetailView : Fragment(R.layout.view_movie_detail) {
 
@@ -23,6 +30,14 @@ class MovieDetailView : Fragment(R.layout.view_movie_detail) {
 
     private val movieId: Long
         get() = arguments!!.getLong(EXTRA_MOVIE_ID)
+
+    private val adapter by lazy {
+        BaseDelegateAdapter.create {
+            delegate {
+                SlotGenreDelegate()
+            }
+        }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -44,6 +59,20 @@ class MovieDetailView : Fragment(R.layout.view_movie_detail) {
                         }
                     })
 
+                adapter.items = kotlin.run {
+                    return@run mutableListOf<DiffItem>().apply {
+                        addAll(it.genres.map { genre ->
+                            SlotGenreUiModel(
+                                id = genre.id,
+                                name = genre.name
+                            )
+                        })
+                    }
+                }
+                if (binding.rvGenres.adapter == null) {
+                    binding.rvGenres.swapAdapter(adapter, true)
+                }
+
                 binding.tvlTitle.setValue(it.title)
                 binding.tvlTagline.setValue(it.tagline)
                 binding.tvlOverview.setValue(it.overview)
@@ -51,11 +80,21 @@ class MovieDetailView : Fragment(R.layout.view_movie_detail) {
         }
 
         with(binding) {
-            toolbar.apply {
+            with(toolbar) {
                 toolbarBackBtn.visible()
                 toolbarBackBtn bindCLick { viewModel.onBackPressed() }
 
                 toolbarTitle.text = getString(R.string.movie_detail)
+            }
+
+            with(rvGenres) {
+                itemAnimator = null
+                setItemViewCacheSize(10)
+
+                val lm = FlexboxLayoutManager(requireContext(), FlexDirection.ROW)
+                lm.justifyContent = JustifyContent.FLEX_START
+
+                layoutManager = lm
             }
         }
     }
